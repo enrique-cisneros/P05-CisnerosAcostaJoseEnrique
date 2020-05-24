@@ -1,0 +1,6 @@
+C:\Users\henry\Desktop\veterinaria-master\Veterinaria\Veterinaria.Common\bin\Debug\Veterinaria.Common.dll
+C:\Users\henry\Desktop\veterinaria-master\Veterinaria\Veterinaria.Common\bin\Debug\Veterinaria.Common.pdb
+C:\Users\henry\Desktop\veterinaria-master\Veterinaria\Veterinaria.Common\obj\Debug\Veterinaria.Common.csprojAssemblyReference.cache
+C:\Users\henry\Desktop\veterinaria-master\Veterinaria\Veterinaria.Common\obj\Debug\Veterinaria.Common.csproj.CoreCompileInputs.cache
+C:\Users\henry\Desktop\veterinaria-master\Veterinaria\Veterinaria.Common\obj\Debug\Veterinaria.Common.dll
+C:\Users\henry\Desktop\veterinaria-master\Veterinaria\Veterinaria.Common\obj\Debug\Veterinaria.Common.pdb
