@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Bienvenido</h1>
+            <p class="lead">Sea bienvenido al sistema de la veterinaria mas iconica del mundo</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Mascotas</h2>
+                <p>
+                    Registre a su mascota
+                </p>
+                <p><a class="btn btn-warning" href="@Url.Action("Index","Pets")">Mascotas</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Dueños</h2>
+                <p>Conozca a los dueños de sus pacientes caninos, gatunos, etc.</p>
+                <p><a class="btn btn-warning" href="@Url.Action("Index","Owners")">Dueños</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Veterinarios</h2>
+                <p>Conozca a sus compañeros de trabajo.</p>
+                <p><a class="btn btn-warning" href="@Url.Action("Index","Veterinaries")">Mascotas</a></p>
+            </div>
+        </div>
+    </div>

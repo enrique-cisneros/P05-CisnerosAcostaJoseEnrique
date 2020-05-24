@@ -1,0 +1,52 @@
+﻿@model Veterinaria.Web.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+    <div class="row justify-content-center m-3">
+        <div class="col-md-10">
+            <div class="card mb-4">
+                <div class="card-header py-2 bg-dark">
+                    <h3 class="text-warning text-center">Registro</h3>
+                </div>
+                <div class="card-body">
+                    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <h4>Registrate Gratuitamente</h4>
+                        <hr />
+                        @Html.ValidationSummary("", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <label class="col-md-6">Correo Electrónico</label>
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-6">Contraseña</label>
+                            <div class="col-md-10">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-6">Confirmar Contraseña</label>
+                            <div class="col-md-10">
+                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <button class="btn btn-outline-warning btn-sm"><span class="text-info"><i class="fas fa-plus-circle"></i></span><span class="text-black-50"> Registrarse</span></button>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

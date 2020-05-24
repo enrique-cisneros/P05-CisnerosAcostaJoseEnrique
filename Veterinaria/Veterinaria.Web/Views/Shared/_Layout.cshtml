@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria - Cisneros Acosta</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
+    <link href="~/Content/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand text-white" href="#">Veterinaria</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="@Url.Action("Index", "Principal")">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="@Url.Action("About", "Home")">Acerca</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="@Url.Action("Contact", "Home")">Contacto</a>
+                </li>
+                @if (User.IsInRole("Admin"))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="@Url.Action("Index", "Users")">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="@Url.Action("Index", "Veterinary")">Medico</a>
+                    </li>
+                }
+
+                @if (User.IsInRole("Veterinary"))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="@Url.Action("Index", "Consults")">Consultas</a>
+                    </li>
+                }
+                
+                @if (User.IsInRole("Owner"))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="@Url.Action("Index","Pets")">Mascotas</a>
+                    </li>
+
+                }
+
+            </ul>
+               
+
+                <span class="navbar-text">
+                    @Html.Partial("_LoginPartial")
+                </span>
+            
+        </div>
+    </nav>
+    <div class="">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p class="text-center">&copy; @DateTime.Now.Year - Cisneros Acosta José Enrique</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
