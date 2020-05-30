@@ -6,10 +6,9 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) 
-{
+<form action="@Url.Action("Create","Pets")" method="post" enctype="multipart/form-data">
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Pet</h4>
         <hr />
@@ -79,13 +78,20 @@
         </div>
 
         <div class="form-group">
+            Fotografia
+            <div class="col-md-10">
+                <input type="file" name="hpb" value="" class="form-control-file" />
+            </div>
+        </div>
+
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
-}
+    </form>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>

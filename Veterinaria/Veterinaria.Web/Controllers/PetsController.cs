@@ -46,10 +46,17 @@ namespace Veterinaria.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,PetType,Age,BirthDate,Color,Race,Weight,Height")] Pet pet)
+        public ActionResult Create(Pet pet, HttpPostedFileBase hpb)
         {
             if (ModelState.IsValid)
             {
+                if (hpb != null)
+                {
+                    var perfil = System.IO.Path.GetFileName(hpb.FileName);
+                    var direccion = "~/Content/img/" + pet.Name + "_" + perfil;
+                    hpb.SaveAs(Server.MapPath(direccion));
+                    pet.ImgUrl = pet.Name + "_" + perfil;
+                }
                 db.Pets.Add(pet);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -76,6 +76,25 @@
 
     </dl>
 </div>
+<div class="col-md-5">
+    <div class="">
+        <div class="card mb-3">
+            <div class="card-header bg-dark">
+                <h5 class="text-warning text-center">Fotografia</h5>
+            </div>
+            <div class="card-header">
+                @if (Model.ImgUrl == null)
+                {
+                    <img src="~/Content/img/desconocido.jpg" class="img-thumbnail" width="500" />
+                }
+                else if (Model.ImgUrl != null)
+                {
+                    <img src="~/Content/img/@Model.ImgUrl" alt="Alternate Text" width="500" />
+                }
+            </div>
+        </div>
+    </div>
+</div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
